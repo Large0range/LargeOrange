@@ -1,2 +1,3 @@
-remember test "hiiii";
-say test
+remember greeting hi;
+say [greeting];
+//test comment
