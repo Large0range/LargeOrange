@@ -13,6 +13,11 @@ fn remember(args: &[&str], Hash: &mut HashMap<String, String>) { // function for
     Hash.insert(args[0].to_string(), args[1].to_string()); // insert variable name and value into hash map 
 }
 
+fn change(args: &[&str], Hash: &mut HashMap<String, String>) { // function for the change instruction
+    *Hash.get_mut(args[0]).unwrap() = args[1].to_string(); // change the hash table value to args[1]
+}
+
+
 fn say(args: &[&str], Hash: &mut HashMap<String, String>) { // function for telling the computer to output something
     let mut joined = args.join(" "); // join the following arguments passed to the say instruction
     
@@ -36,8 +41,9 @@ fn say(args: &[&str], Hash: &mut HashMap<String, String>) { // function for tell
 
 fn CreateHashMap() -> HashMap<String, fn(&[&str], &mut HashMap<String, String>)> { //create the hash map for instruction to function saving
     let TokenHashMap: HashMap<String, fn(&[&str], &mut HashMap<String, String>)> = HashMap::from([
-        ("remember".to_string(), remember as fn(&[&str], &mut HashMap<String, String>)),
-        ("say".to_string(), say as fn (&[&str], &mut HashMap<String, String>)),
+        ("remember".to_string(), remember as fn(&[&str], &mut HashMap<String, String>)), // remember instruction
+        ("say".to_string(), say as fn (&[&str], &mut HashMap<String, String>)),          // say instruction
+        ("change".to_string(), change as fn(&[&str], &mut HashMap<String, String>)),     // change instruction
     ]);
 
     return TokenHashMap;
