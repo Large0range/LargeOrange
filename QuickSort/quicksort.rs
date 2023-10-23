@@ -32,6 +32,6 @@ fn fuckin_sort<T: Clone + std::cmp::PartialOrd>(array: &mut Vec<T>, start: usize
         i += 1; // move on and do it again
     }
 
-    if j > 1 { sort::<T>(array, start, j-1); } // partition sort wrapped in an if statement again because usize is a wanker
-    sort::<T>(array, j+1, end); // this is my favorite child
+    if j > 1 { fuckin_sort::<T>(array, start, j-1); } // partition sort wrapped in an if statement again because usize is a wanker
+    fuckin_sort::<T>(array, j+1, end); // this is my favorite child
 }
