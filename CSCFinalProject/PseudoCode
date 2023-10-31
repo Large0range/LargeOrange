@@ -1,0 +1,27 @@
+Alex Roy
+
+Final Project PseudoCode
+
+ask type of coffee
+if coffee is hot
+	ask for what additions they want, choices: [cream, milk, almond milk, vanilla, sugar]
+
+if coffee is cold
+	ask for what additions they want, choices: [cream, milk, sugar, almond milk, caramel, vanilla, hazelnut]
+
+
+then ask for what size, choices: [small, medium, large, extra-large]
+
+check if the user wants to add anything more
+if yes repeat checks
+
+calculate the price then display it
+
+ask if they want to pay online or in store
+if they want to pay online, provide text file receipt
+
+Receipt Format
+--------Coffee For Coders-------
+[ORDER]
+--------------------------------
+[AMOUNT]
