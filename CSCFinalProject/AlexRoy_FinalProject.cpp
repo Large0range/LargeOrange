@@ -19,6 +19,7 @@
 //Choose more toppings if not
 //Display total and ask pickup type if yes
 
+double totalCost = 0;
 
 enum HOT { // enum type for prices of hot coffee toppings
     Hcream,
@@ -62,6 +63,12 @@ enum SIZE { // enum type for prices of small, medium, and large
     large
 };
 
+const double SIZE_INDEXING_LIST[] = {
+    2.00,  // small
+    5.00,  // medium
+    10.00, // large
+};
+
 std::string lowercase(std::string string) { // converts a string to lowercase
     const char *f = string.c_str(); // convert string to a c string
     char buffer[string.length()]; // create a buffer string of same size
@@ -86,7 +93,6 @@ int ValidateMenuBuffer(std::string stringBuffer, int min, int max) { // function
 }
 
 void hotToppings() { // function to be called if the user wants a hot coffee
-    static double totalCost = 0; // static variable to track the current cost of the coffee
     int choice;
 
     do {
@@ -101,7 +107,6 @@ void hotToppings() { // function to be called if the user wants a hot coffee
 }
 
 void coldToppings() { // function to be called if the user wants a cold coffee
-    static double totalCost = 0; // static variable to track the current cost of the coffee
     int choice;
 
     do {
@@ -128,6 +133,20 @@ int main() {
 
     if (!(choice-1)) hotToppings(); // if user inputted a 1 then we can subtract one and invert the check to see if they chose hot
     else coldToppings(); // if they did not then they must have chosen cold
+
+    //sizing menu
+    int size;
+    do {
+	std::string sizeBuffer;
+	std::cout << "What size would you like?\n1) Small\n2) Medium\n3) Large\nPlease Enter The Number Of The Size You Want: ";
+	std::cin >> sizeBuffer;
+	
+	size = ValidateMenuBuffer(sizeBuffer, 1, 3);
+    } while (size == -1);
+
+    totalCost += SIZE_INDEXING_LIST[size-1];
+
+    std::cout << totalCost << std::endl;
 
     return 0; // return exit code 0
 }
