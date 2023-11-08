@@ -98,12 +98,12 @@ void hotToppings() { // function to be called if the user wants a hot coffee
     do {
         std::string choiceBuffer; // buffer for input validation
         std::cout << "Hot Toppings:\n1) Cream\n2) Milk\n3) Almond Milk\n4) Vanilla\n5) Sugar\nPlease Enter The Number Of The Topping You Would Like: "; // Display menu in above format
-        std::cin >> choiceBuffer; // store the input from the user
+        std::getline(std::cin, choiceBuffer); // store the input from the user
 
         choice = ValidateMenuBuffer(choiceBuffer, 1, 5); // validate the choice buffer and store the result in the integer choice variable
     } while (choice == -1);
 
-    totalCost += HOT_TOPPINGS_INDEXING_LIST[choice]; // if all went well then just add the cost to the static total cost variable
+    totalCost += HOT_TOPPINGS_INDEXING_LIST[choice-1]; // if all went well then just add the cost to the static total cost variable
 }
 
 void coldToppings() { // function to be called if the user wants a cold coffee
@@ -112,12 +112,12 @@ void coldToppings() { // function to be called if the user wants a cold coffee
     do {
         std::string choiceBuffer; // buffer for input validation
         std::cout << "Cold Toppings:\n1) Cream\n2) Milk\n3) Almond Milk\n4) Vanilla\n5) Sugar\n6) Caramel\n7) Hazel Nut\nPlease Enter The Number Of The Topping You Would Like: "; // Display menu in above format
-        std::cin >> choiceBuffer; // store the input from the user
+        std::getline(std::cin, choiceBuffer); // store the input from the user
 
         choice = ValidateMenuBuffer(choiceBuffer, 1, 7); // validate the choice buffer and store the result in the integer choice variable
     } while (choice == -1);
 
-    totalCost += COLD_TOPPINGS_INDEXING_LIST[choice]; // if all went well then just add the cost to the static total cost variable
+    totalCost += COLD_TOPPINGS_INDEXING_LIST[choice-1]; // if all went well then just add the cost to the static total cost variable
 }
 
 
@@ -127,7 +127,7 @@ int main() {
 
     do {
         std::cout << "What type of coffee do you want\n1) Hot\n2) Cold\nPlease Enter The Number: "; // prompt the user for the type of coffee
-        std::cin >> type; // store the user input in the type variable
+        std::getline(std::cin, type); // store the user input in the type variable
         choice = ValidateMenuBuffer(type, 1, 2); // validate the input and store the converted result into the choice variable
     } while (choice == -1); // if validation failed then repeat
 
@@ -139,7 +139,7 @@ int main() {
     do {
 	std::string sizeBuffer;
 	std::cout << "What size would you like?\n1) Small\n2) Medium\n3) Large\nPlease Enter The Number Of The Size You Want: ";
-	std::cin >> sizeBuffer;
+	std::getline(std::cin, sizeBuffer);
 	
 	size = ValidateMenuBuffer(sizeBuffer, 1, 3);
     } while (size == -1);
