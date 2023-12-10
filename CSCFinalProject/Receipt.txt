@@ -1,0 +1,12 @@
+--------Coffee For Coders--------
+Cold Coffee With
+  Vanilla       0.2$
+  Sugar         0.25$
+  Almond Milk   0.17$
+  Milk          0.15$
+  Cream         0.12$
+  Caramel       0.45$
+  Hazel Nut     0.79$
+Size
+  Large         10$
+Total Cost:     12.13$

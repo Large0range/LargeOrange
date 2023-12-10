@@ -21,7 +21,7 @@ ask if they want to pay online or in store
 if they want to pay online, provide text file receipt
 
 Receipt Format
---------Coffee For Coders-------
+--------Coffee For Coders--------
 [ORDER]
---------------------------------
+---------------------------------
 [AMOUNT]
