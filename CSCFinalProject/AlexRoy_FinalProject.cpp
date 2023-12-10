@@ -1,3 +1,21 @@
+// File Name: AlexRoy_FinalProject.cpp
+// Written by: Alex Roy
+// Description: A program for customers of a coffee shop to order online
+// Challenges: 
+// Time Spent: 2 days
+// Given Input:              Expected Output: 
+// --------------------      -------------------------
+// 1) 
+// 2) 
+// 3) 
+// Revision History
+// Date:        Revised By:     Action:
+// ------------------------------------------------------------------
+// 10/12/2023    (AR)         (created the program)
+
+
+
+
 #include <iostream>
 #include <cstring>
 #include <fstream>
